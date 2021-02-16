@@ -66,7 +66,7 @@ const Oscillator = ({ waveform, gainValue, filterType, filterFreq }) => {
 
       {windowScreen === 768 && (
         <Piano
-          width={700}
+          width={650}
           noteRange={noteRange}
           keyboardShortcuts={keyboardShortcuts}
           playNote={(midiNumber) => {
