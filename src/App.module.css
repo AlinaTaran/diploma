@@ -1,0 +1,145 @@
+@keyframes flashin-border {
+  0% {
+    border-color: orange;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: orange;
+  }
+}
+
+@keyframes printed-text {
+  from {
+    width: 0%;
+  }
+}
+
+.wrapper {
+  padding: 0px 200px;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.title {
+  margin: 0 auto;
+  padding: 40px 0px;
+  width: 11ch;
+  overflow: hidden;
+  color: white;
+  font-size: 40px;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid orange;
+  animation: printed-text 2s steps(11), flashin-border 0.5s step-start infinite;
+}
+
+.buttonWrapper {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonDescription {
+  font-family: monospace;
+  color: white;
+  font-size: 40px;
+}
+
+.localeButton {
+  width: 200px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #f50057;
+  padding: 12px 12px 12px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease 0s;
+  position: relative;
+}
+
+.localeButton::before {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 10px;
+  bottom: 7px;
+  height: 25px;
+  width: 25px;
+}
+
+.localeButtonUkraine::before {
+  background-image: url("./images/ukraine.png");
+}
+
+.localeButtonEnglish::before {
+  background-image: url("./images/united-kingdom.png");
+}
+
+.localeButtonRussian::before {
+  background-image: url("./images/russian.png");
+}
+
+.localeButton:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+@media (max-width: 767px) {
+  .title {
+    margin-left: 75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .localeButton:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buttonWrapper {
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .localeButton {
+    height: 56px;
+  }
+
+  .localeButton:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .localeButton::before {
+    bottom: 14px;
+  }
+}
+
+.parameters {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
+.settingsTitle {
+  font-size: 50px;
+  font-weight: 400px;
+  font-family: monospace;
+}
