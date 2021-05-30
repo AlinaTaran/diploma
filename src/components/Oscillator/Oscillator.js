@@ -11,14 +11,12 @@ const Oscillator = ({ waveform, gainValue, filterType, filterFreq }) => {
 
   const playSound = (midiNumber) => {
     let oscillator = audioContext.createOscillator();
-    // Waveform type
     oscillator.type = waveform;
     oscillator.connect(biquadFilter);
     biquadFilter.connect(gainNode);
     biquadFilter.type = filterType;
     biquadFilter.frequency.setValueAtTime(filterFreq, audioContext.currentTime);
     biquadFilter.gain.setValueAtTime(25, audioContext.currentTime);
-    // Gain Value
     gainNode.connect(audioContext.destination);
     gainNode.gain.value = gainValue;
     oscillator.frequency.value = Math.pow(2, (midiNumber - 69) / 12) * 440;
