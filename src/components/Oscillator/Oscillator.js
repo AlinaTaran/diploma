@@ -21,11 +21,7 @@ const Oscillator = ({ waveform, gainValue, filterType, filterFreq }) => {
     // Gain Value
     gainNode.connect(audioContext.destination);
     gainNode.gain.value = gainValue;
-    // console.log(gainNode.gain.minValue);
-    // console.log(gainNode.gain.maxValue);
     oscillator.frequency.value = Math.pow(2, (midiNumber - 69) / 12) * 440;
-    // console.log(gainNode.frequency.minValue);
-    // console.log(gainNode.frequency.maxValue);
     setOscillators({ ...oscillators, [midiNumber]: oscillator });
     oscillator.start();
   };
