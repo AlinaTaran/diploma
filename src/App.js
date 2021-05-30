@@ -26,26 +26,18 @@ const App = () => {
 
   const handleChangeWaveform = (event) => {
     setWaveform(event.target.value);
-    // console.log(event.target.value);
-    //work
   };
 
   const handleChangeFilterType = (event) => {
     setFilterType(event.target.value);
-    // console.log(event.target.value);
-    //work
   };
 
   const handleChangeGainValue = (event) => {
     setGainValue(event.target.value);
-    // console.log(newValue);
-    //work
   };
 
   const handleChangeFrequency = (event) => {
     setFrequency(event.target.value);
-    // console.log(newValue);
-    //work
   };
 
   return (
