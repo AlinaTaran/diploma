@@ -1,6 +1,5 @@
 import { ENGLISH } from "../LOCALES.js";
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   [ENGLISH]: {
     title: "Synthesizer",
